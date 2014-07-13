@@ -59,7 +59,7 @@
 							<li><a href="#team" data-scroll>Team</a></li>
 							<li><a href="#thespace" data-scroll>The Space</a></li>
 							<li><a href="#events" data-scroll>Events</a></li>
-							<li><a href="#inquire" data-scroll>Inqurie</a></li>
+							<li><a href="#inquire" data-scroll>Inquire</a></li>
 							<li><a href="#visit" data-scroll>Visit</a></li>
 							</li>
 						</ul>

@@ -11,8 +11,8 @@
 	<article id="post-<?php the_ID(); ?>" class="" role="article">
 
 			<section id="home" class="machine-hero-wrap cf">
-				<div class="machine-hero">
-					<div class="wrap cf hero-text">
+				<div class="machine-hero timed">
+					<div class="wrap cf hero-text animated fadeInUp">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/join-the-machine.png">
 						<h2>
 							When you surround yourself with good people Great things happen
