@@ -19,6 +19,10 @@ GENERAL STYLES
 
 body {}
 
+p.intro, .machine-join p {
+	padding: 0 120px 0 120px;
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -149,7 +153,19 @@ HERO IMAGE STYLES
 
 .machine-hero {
 	padding-top: 80px;
+
+	h2, .h2 {
+		font-size: 36px;
+	}
 }
+
+/*********************
+TEAM STYLES
+*********************/
+.machine-partner {
+	margin-bottom: 35px;
+}
+
 
 /*********************
 SIDEBARS & ASIDES

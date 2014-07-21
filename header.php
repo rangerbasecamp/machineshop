@@ -51,8 +51,7 @@
 
 				<div id="inner-header" class="wrap cf">
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<a id="logo" href="#logo" rel="nofollow" data-scroll ><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/machine-shop-logo.png"></a>
+					<a id="logo" href="<?php echo home_url(); ?>" rel="nofollow" data-scroll ><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/machine-shop-logo.png"></a>
 					<nav class="nav-collapse" role="navigation">
 						<ul class="nav top-nav cf">
 							<li><a href="#about" data-scroll>About</a></li>

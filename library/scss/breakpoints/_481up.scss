@@ -141,7 +141,7 @@ HERO IMAGE STYLES
 	padding-bottom: 0;
 
 	h2, .h2 {
-		font-size: 36px;
+		font-size: 28px;
 		line-height: 48px;
 		margin-top: 50px;
 	}	
@@ -160,16 +160,12 @@ ABOUT STYLES
 *********************/
 
 .machine-about {
-	min-height: 600px;
 
-	.wrap {
-		background: url('../images/vintage-shop-image.jpg') no-repeat left top;
-		min-height: 600px;	
+	.wrap {	
 	}
 
 	h2, .h2 {
 		text-align: left;
-		margin-top: 100px;
 	}
 
 	p {

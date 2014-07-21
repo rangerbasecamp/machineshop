@@ -22,19 +22,21 @@
 
 			</section>
 			<section id="about" class="machine-about cf">
-				<div class="wrap cf"
+				<div class="wrap cf">
 					<div class="about-text d-3of5">
-						<h2>So, can you fix my car?</h2>
+						<h2>The power of collaboration</h2>
 						<p>
-							Probably not. Our name is an homage to our studio’s history. Nicknamed “The Machine Shop” by the hard-working folks who worked here in decades past, our workspace still embodies the same roll-up-our-sleeves, straight-talking, fix-it-better mentality as our predecessors.
-						</p>
+							The Machine Shop is the collaborative workspace for four independent creative studios. Located in downtown Colorado Springs, this former automotive garage is now home to artists, architects, developers, designers and a few other like-minded creative folks.
+
+
+						<h3>So, can you fix my car?</h3>
 						<p>
-							But, with 100% more creativity and a whole lot less axle grease.
+							Probably not. Our name is an homage to our studio’s history. Nicknamed “The Machine Shop” by the hard-working folks who worked here in decades past, our workspace still embodies the same roll-up-our-sleeves, straight-talking, fix-it-better mentality as our predecessors. But, with 100% more creativity and a whole lot less axle grease.
+
 						</p>
 						<p>
 							You’ll find us doing creative work for clients, sharing ideas, throwing events, eating tacos, collaborating on projects, hosting artists, and sending a signal boost to the creative greatness in our community.
 						</p>
-						<span class="machine-caption"><strong>The Machine Shop</strong> Circa 1952</span>
 					</div>
 				</div>
 			</section>
@@ -69,35 +71,45 @@
 					<h2>The Machinists</h2>
 					<p class="intro">We’ve got four anchor companies who founded and share our space, along with a few like-minded creative folks here and there, an artist-in-residence, and one french bulldog mascot.</p>
 
-					<div class="d-1of4 t-1of2 machine-partner">
+					<div class="d-1of3 t-1of2 machine-partner">
 						<a href="http://www.copilotcreative.com/" target="_blank"><img class="machinist-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/logo-copilot.png"></a>
-						<h3>Co-Pilot <br>Creative</h3>
-						<p>Crafting and launching <br>brands into full flight.</p>
+						<h3>Co-Pilot Creative</h3>
+						<p>Crafting and launching brands into full flight.</p>
 						<a href="http://www.copilotcreative.com/" target="_blank">CoPilot Creative Website</a>						
 					</div>
 
-					<div class="d-1of4 t-1of2 machine-partner">
+					<div class="d-1of3 t-1of2 machine-partner">
 						<a href="http://designrangers.com/" target="_blank"><img class="machinist-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/logo-design-rangers.png"></a>
-						<h3>Design <br>Rangers</h3>
-						<p>Field guides to the <br>creative world.</p>
+						<h3>Design Rangers</h3>
+						<p>Field guides to the creative world.</p>
 						<a href="http://designrangers.com/" target="_blank">Design Rangers Website</a>						
 					</div>
 
-					<div class="d-1of4 t-1of2 machine-partner">
+					<div class="d-1of3 t-1of2 machine-partner">
 						<a href="http://echo-arch.com/" target="_blank"><img class="machinist-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/logo-echo.png"></a>
-						<h3>Echo <br>Architecture</h3>
-						<p>Sustainable. Economical. <br>Beautiful.</p>
+						<h3>Echo Architecture</h3>
+						<p>Sustainable. Economical. Beautiful.</p>
 						<a href="http://echo-arch.com/" target="_blank">Echo Architecure Website</a>
 					</div>					
 
-					<div class="d-1of4 machine-partner">
+					<div class="d-1of3 machine-partner">
 						<a href="http://fixercreative.com/" target="_blank"><img class="machinist-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/logo-fixer.png"></a>
-						<h3>Fixer <br>Creative Co.</h3>
-						<p>Design + Writing + <br>Creative Direction</p>
+						<h3>Fixer Creative Co.</h3>
+						<p>Design + Writing + Creative Direction</p>
 						<a href="http://fixercreative.com/" target="_blank">Fixer Creative Co. Website</a>						
 					</div>
-
-																				
+					<div class="d-1of3 machine-partner">
+						<a href="http://www.studioc3.tv/" target="_blank"><img class="machinist-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/logo-studio-c3.png"></a>
+						<h3>Studio C3</h3>
+						<p>Unexpected storytelling in its purest form.</p>
+						<a href="http://www.studioc3.tv/" target="_blank">Studio C3 Website</a>
+					</div>
+					<div class="d-1of3 machine-partner">
+						<a href="http://timfthornton.com/" target="_blank"><img class="machinist-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/logo-artist.png"></a>
+						<h3>Tim F. Thornton</h3>
+						<p>Current Machine Shop resident artist.</p>
+						<a href="http://timfthornton.com/" target="_blank">Tim F. Thornton's Website</a>
+					</div>																		
 				</div>
 			</section>
 			<section id="thespace" class="machine-space">
@@ -112,25 +124,99 @@
 				<div class="wrap cf">
 					<h2>Upcoming Events</h2>
 					<div class="d-2of3 t-all">
+					<?php
+						// The Query
+						$args1 = array(
+							  'post_status'=>'publish',
+							  'post_type'=>array(TribeEvents::POSTTYPE),
+							  'posts_per_page'=>1,
+							  //order by startdate from newest to oldest
+							  'meta_key'=>'_EventStartDate',
+							  'orderby'=>'_EventStartDate',
+							  'order'=>'ASC',
+							  //required in 3.x
+							  'eventDisplay'=>'custom',
+							    //query events by category
+							  'tax_query' => array(
+							      array(
+							          'taxonomy' => 'tribe_events_cat',
+							          'field' => 'slug',
+							          'terms' => 'featured',
+							          'operator' => 'IN'
+							      ),
+							  )
+						);
+						$machine_featured = new WP_Query( $args1 );
+						// The Loop
+						if ( $machine_featured->have_posts() ) {							
+							while ( $machine_featured->have_posts() ) {
+								$machine_featured->the_post(); ?>
 						<div class="d-1of3 t-1of3">
-							<img src="http://placehold.it/400x400" style="max-width: 100%;">
+							<?php echo tribe_event_featured_image($pageID, 'bones-thumb-400'); ?>
 						</div>
 						<div class="d-2of3 t-2of3 event-description">
-							<h3>Featured Event</h3>
-							<h4>Open House</h4>
-							<p>Stay tuned for more details on the grand opening of the Machine Shop and our open house.</p>
-							<a class="machine-button" href="#">Full Event Info</a>
+							<h3><?php the_title(); ?></h3>						
+							<h4 class="featured-date">
+								<?php echo tribe_get_start_date(); ?>
+							</h4>	
+							<?php the_excerpt(); ?>
+							<a class="machine-button" href="<?php the_permalink(); ?>">Full Event Info</a>
 						</div>
+						<?php 
+								}
+							} else {
+								// no posts found
+							}
+							/* Restore original Post Data */
+							wp_reset_postdata();
+						?>
 					</div>
 					<div class="d-1of3 m-all events-more">
 						<h3>More Events</h3>
-						<ul class="events-list">
-							<li><a href="#"><span class="event-date">Date TBD</span>Details coming soon</a></li>
-							<li><a href="#"><span class="event-date">Date TBD</span>Details coming soon</a></li>
-							<li><a href="#"><span class="event-date">Date TBD</span>Details coming soon</a></li>							
-						</ul>
-					</div>
+					<?php
+						// The Query
+						$args = array(
+							  'post_status'=>'publish',
+							  'post_type'=>array(TribeEvents::POSTTYPE),
+							  'posts_per_page'=>4,
+							  //order by startdate from newest to oldest
+							  'meta_key'=>'_EventStartDate',
+							  'orderby'=>'_EventStartDate',
+							  'order'=>'ASC',
+							  //required in 3.x
+							  'eventDisplay'=>'custom',
+							  'tax_query' => array(
+							      array(
+							          'taxonomy' => 'tribe_events_cat',
+							          'field' => 'slug',
+							          'terms' => 'featured',
+							          'operator' => 'NOT IN'
+							      ),
+							  )
+						);
+						$machine_events = new WP_Query( $args );
+						// The Loop
+						if ( $machine_events->have_posts() ) {
 
+							echo '<ul class="events-list">';
+							
+							while ( $machine_events->have_posts() ) {
+								$machine_events->the_post(); ?>
+
+								<li><a href="<?php the_permalink(); ?>"><span class="event-date"><?php echo tribe_get_start_date($pageID, false, "M d"); ?></span><?php the_title(); ?></a></li>
+							<?php }
+								echo '</ul>';
+							?>
+					</div>
+					<?php 
+						} else { ?>
+							<ul class="events-list">
+								<li><a href="#">No upcoming events</a></li>
+							</ul>
+					<?php }
+						/* Restore original Post Data */
+						wp_reset_postdata();
+					?>
 				</div>
 			</section>
 

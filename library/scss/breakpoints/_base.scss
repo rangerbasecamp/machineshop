@@ -133,7 +133,7 @@ h1, .h1 {;
 }
 
 h2, .h2 {
-	font-size: 42px;
+	font-size: 36px;
 	font-weight: $header-weight;
 	letter-spacing: 0.02em;
 	line-height: 100%;
@@ -320,7 +320,7 @@ HERO IMAGE STYLES
 *********************/
 .machine-hero-wrap {
 	overflow: hidden;
-	border-bottom: 70px solid $machine-steel;	
+	border-bottom: 37px solid $machine-steel;	
 }
 .machine-hero {
 	background: $machine-steel url('../images/machine-hero-retro.jpg') no-repeat center top fixed;
@@ -333,7 +333,7 @@ HERO IMAGE STYLES
 		max-width: 100%;
 	}
 	h2, .h2 {
-		font-size: 24px;
+		font-size: 20px;
 		font-weight: normal;
 		line-height: 36px;
 		margin-top: 40px;
@@ -375,21 +375,19 @@ ABOUT STYLES
 	background: #fff url('../images/machine-fabric.jpg') repeat left top;
 	border-top: 2px solid #242425;
 	height: auto;
+	padding: 70px 0 70px 0;
 
 	.wrap {
-		background: url('../images/vintage-shop-mobile.jpg') no-repeat center bottom;
 		position: relative;
 	}
 
 	h2, .h2 {
 		color: $machine-cool;
-		margin-top: 60px;
 		margin-bottom: 20px;
 		text-align: center;
 	}
 
 	p {
-		padding-bottom: 217px;
 		text-align: center;
 	}
 
@@ -449,7 +447,7 @@ TEAM STYLES
 	p.intro	{
 		font-size: 20px;
 		margin-bottom: 60px;
-		padding: 0 120px 0 120px;
+		padding: 0 20px 0 20px;
 	}
 
 	a {
@@ -510,10 +508,17 @@ EVENTS STYLES
 	h4, .h4 {
 		margin: 0;
 	}
+
+	img {
+		max-width: 100%;
+	}
 }
 .event-description, .events-more {
 	padding-left: 5%;
 	padding-right: 5%;
+}
+#content .event-description p {
+	margin-bottom: 14px;
 }
 ul.events-list {
 	border-bottom: 1px solid #ccc;
@@ -525,6 +530,9 @@ ul.events-list {
 		padding: 10px 0 10px 0;
 		text-decoration: none;
 	}
+}
+.featured-date {
+	color: #b74222;
 }
 .event-date {
 	font-weight: 700;
@@ -544,7 +552,7 @@ JOIN STYLES
 	p {
 		color: $light-gray;
 		font-size: 20px;
-		padding: 0 120px 0 120px;
+		padding: 0 20px 0 20px;
 		text-align: center;
 	}
 
@@ -615,9 +623,6 @@ POSTS & CONTENT STYLES
 
 		.hentry {
 			background-color: $white;
-			border-radius: 3px;
-			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
 
 			header {
 				border-bottom: 1px solid $light-gray;
@@ -670,7 +675,7 @@ POSTS & CONTENT STYLES
 
 		/* entry content */
 		.entry-content {
-			padding: 1.5em 1.5em 0;
+			padding: 2.5em 2.5em 0;
 
 			p {
 				margin: 0 0 24px 0;

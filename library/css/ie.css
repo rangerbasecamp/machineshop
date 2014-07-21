@@ -195,7 +195,7 @@ HERO IMAGE STYLES
   background-size: cover;
   padding-bottom: 0; }
   .machine-hero h2, .machine-hero .h2 {
-    font-size: 36px;
+    font-size: 28px;
     line-height: 48px;
     margin-top: 50px; }
   .machine-hero p {
@@ -208,23 +208,17 @@ HERO IMAGE STYLES
 /*********************
 ABOUT STYLES
 *********************/
-.machine-about {
-  min-height: 600px; }
-  .machine-about .wrap {
-    background: url("../images/vintage-shop-image.jpg") no-repeat left top;
-    min-height: 600px; }
-  .machine-about h2, .machine-about .h2 {
-    text-align: left;
-    margin-top: 100px; }
-  .machine-about p {
-    padding-bottom: 0;
-    text-align: left; }
-  .machine-about .machine-caption {
-    margin-left: 0;
-    margin-top: 24px;
-    position: relative;
-    bottom: auto;
-    right: auto; }
+.machine-about h2, .machine-about .h2 {
+  text-align: left; }
+.machine-about p {
+  padding-bottom: 0;
+  text-align: left; }
+.machine-about .machine-caption {
+  margin-left: 0;
+  margin-top: 24px;
+  position: relative;
+  bottom: auto;
+  right: auto; }
 
 .about-text {
   margin-left: 40%;
@@ -312,6 +306,9 @@ come into play. Have fun!
 /*********************
 GENERAL STYLES
 *********************/
+p.intro, .machine-join p {
+  padding: 0 120px 0 120px; }
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -394,6 +391,14 @@ HERO IMAGE STYLES
 *********************/
 .machine-hero {
   padding-top: 80px; }
+  .machine-hero h2, .machine-hero .h2 {
+    font-size: 36px; }
+
+/*********************
+TEAM STYLES
+*********************/
+.machine-partner {
+  margin-bottom: 35px; }
 
 /*********************
 SIDEBARS & ASIDES
@@ -460,7 +465,7 @@ HERO IMAGE STYLES
 *********************/
 @media only screen and (min-height: 800px) {
   .machine-hero-wrap, .machine-hero {
-    height: 700px; } }
+    height: 7px; } }
 @media only screen and (min-height: 1027px) {
   .machine-hero-wrap, .machine-hero {
     height: 957px; }
